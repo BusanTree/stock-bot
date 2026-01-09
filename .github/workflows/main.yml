@@ -3,9 +3,8 @@ name: Morning Stock Bot
 on:
   schedule:
     # 매일 한국 시간 아침 6시 30분 실행 (UTC 21:30)
-    # 깃허브는 영국 시간(UTC)을 쓰기 때문에 -9시간을 해야 합니다.
     - cron: '30 21 * * *'
-  workflow_dispatch: # 수동 실행 버튼 (테스트용)
+  workflow_dispatch: # 수동 실행 버튼
 
 jobs:
   build:
@@ -20,7 +19,7 @@ jobs:
       with:
         python-version: '3.9'
 
-    - name: 라이브러리 설치 (주문서대로)
+    - name: 라이브러리 설치
       run: |
         pip install -r requirements.txt
 
