@@ -1,7 +1,8 @@
 import yfinance as yf
 import requests
 import time
-import os  # 운영체제 기능 불러오기
+import os
+from datetime import datetime
 
 # ==========================================
 # 👇 [수정] 토큰을 코드에 직접 적지 않고,
@@ -99,4 +100,5 @@ for name, ticker in my_portfolio.items():
         send_telegram_message(error_msg)
 
 print("✅ 모든 브리핑 완료!")
+
 send_telegram_message("🏁 이상 브리핑을 마칩니다. 오늘도 성투하세요!")
